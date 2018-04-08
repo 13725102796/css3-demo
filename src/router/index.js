@@ -1,15 +1,14 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+
+
+// 路由导入
+import Home from './home'
 
 Vue.use(Router)
-
+//路由集合
+const routes = [].concat(Home)
 export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
-    }
-  ]
+  mode: 'history',
+  routes: routes
 })

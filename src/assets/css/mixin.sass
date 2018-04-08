@@ -1,0 +1,47 @@
+@import './var.sass'
+
+@mixin no-wrap() // 不换行
+  text-overflow: ellipsis
+  overflow: hidden
+  white-space: nowrap
+
+@mixin flex
+  display: flex
+  justify-content: center
+
+@mixin bg-image($name)  // 背景图片
+  background-image: url("../images/#{name}.png")
+  background-position: center
+  background-size: cover
+  background-repeat: no-repeat
+
+@mixin border-line ($px, $direction)
+  border-#{$direction}: $px solid $border-color
+
+@mixin mask
+  padding: 6px 0
+  z-index: 20
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  bottom: .2rem
+  background: #e2e2e2c7
+
+@mixin position($name)  
+  position: absolute
+  left: 50%
+  translate: -50% 0 
+  @if($name == 'vertical')
+    top: 50%
+    transform: translateY(-50%)
+
+@mixin fa
+  display: inline-block
+  font: normal normal normal 14px/1 FontAwesome
+  font-size: inherit
+  text-rendering: auto
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+
+
