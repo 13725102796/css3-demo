@@ -3,6 +3,7 @@
   <div class="title">home</div>
   <div class="container">
     <router-link to="/Nav">nav</router-link>
+    <router-link to="/Toast">Toast</router-link>
   </div>
 
 </div>

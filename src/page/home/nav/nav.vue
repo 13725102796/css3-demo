@@ -1,5 +1,6 @@
 <template>
   <div class="wrapper Nav">
+    <Header :title="'nav'" />
     <div class="nav">
       <ul>
         <li @click="select(1)" :class="[tag === 1 && 'active']">
@@ -31,12 +32,16 @@
   </div>
 </template>
 <script>
+import Header from '@/commond/header.vue'
 export default {
   data(){
     return {
       tag: 1
     }
    
+  },
+  components:{
+    Header
   },
   methods: {
     select(tag) {

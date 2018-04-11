@@ -6,6 +6,14 @@ import router from './router'
 
 import '@/assets/css/init.css'
 import '@/assets/js/rem.js'
+
+// plugins
+import loading from '@/plugins/loading/loading.js'
+import toast from '@/plugins/toast/toast.js'
+// 注册全局
+Vue.use(loading)
+Vue.use(toast)
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
