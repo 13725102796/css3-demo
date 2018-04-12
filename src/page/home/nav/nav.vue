@@ -66,9 +66,9 @@ export default {
   padding: 2rem 0
   ul
     display: flex
-    background: $green-color
+    background: #06c1ae73
     padding: .2rem 0 
-    // color: #fff
+    color: #444
     li
       height: .8rem
       line-height: .8rem

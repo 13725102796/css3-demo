@@ -1,7 +1,7 @@
 <template>
   <div class="container" v-show="show">
     <div class="position">
-      <p :style="{animation: style}" >{{msg}}</p>
+      <p :style="{animation: style,transformOrigin: origin }" >{{msg}}</p>
     </div>   
   </div>
 </template>
@@ -12,15 +12,18 @@ export default {
       show: true,
       msg: '',
       // ms: 2,
-      style: 'entry 2s ease'
+      style: 'entry 2s ease',
+      origin: 'center center'
     }
   },
   methods: {
-    delayed(msg,ms){
+    delayed(msg,ms,method,top){
       
       this.msg = msg
       // this.ms = ms/1000 
-      this.style = (msg+ ' ' +ms/1000 + 's' + ' ' + 'ease').toString() 
+      this.style = (method+ ' ' +ms/800 + 's' + ' ' + 'ease').toString() 
+      if(top) this.origin = 'center top'
+     
       console.log(this.style)
       setTimeout(()=>{
         this.show = false
@@ -106,6 +109,15 @@ export default {
   30%,70% 
     opacity: 1
     transform: rotateY(0)
+@keyframes fixedTopX
+  0%,100%
+    opacity: 0
+    transform: rotateX(-70deg)
+    height: 0
+  30%,70% 
+    opacity: 1
+    transform: rotateX(0)
+    height: 100%
     
 </style>
 

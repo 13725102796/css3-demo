@@ -18,7 +18,7 @@
       <li @click="useWho('rotateY')" >
         <btn :text="'rotateY'" />
       </li>
-      <li @click="useWho('fixedTopX')" >
+      <li @click="useWho('fixedTopX','top')" >
         <btn :text="'fixedTopX'" />
       </li>
     </ul>
@@ -33,8 +33,8 @@ export default {
     Header
   },
   methods: {
-    useWho(tag) {
-      this.$toast(tag,2500)
+    useWho(tag,top) {
+      top ? this.$toast(tag,2500,tag,top) : this.$toast(tag,2500,tag)    
     }
   }
 }
@@ -43,6 +43,9 @@ export default {
 .toast
   .title
     padding: .5rem 0
+  ul
+    li
+      padding: .2rem 0
 
 </style>
 

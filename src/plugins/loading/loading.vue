@@ -28,7 +28,7 @@ export default {
 @import '~@/assets/css/mixin.sass'
 .loading           
 	// height: .6rem
-	padding: .5rem 0 
+	padding: .25rem 0 
   
 .loading span   
 	display: inline-block  

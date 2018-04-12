@@ -1,6 +1,8 @@
 const Home = () => import ('@/page/home/home')
 const Nav = () => import ('@/page/home/nav/nav')
 const Toast = () => import ('@/page/home/toast/toast')
+const Scroll = () => import ('@/page/home/scroll/scroll')
+const UpToRefresh = () => import ('@/page/home/scroll/upToRefresh')
 export default [
   {
     path: '*',
@@ -14,5 +16,13 @@ export default [
     path: '/Toast',
     name: 'Toast',
     component: Toast
+  },{
+    path: '/Scroll',
+    name: 'Scroll',
+    component: Scroll
+  },{
+    path: '/UpToRefresh',
+    name: 'UpToRefresh',
+    component: UpToRefresh
   }
 ]
