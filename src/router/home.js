@@ -3,6 +3,7 @@ const Nav = () => import ('@/page/home/nav/nav')
 const Toast = () => import ('@/page/home/toast/toast')
 const Scroll = () => import ('@/page/home/scroll/scroll')
 const UpToRefresh = () => import ('@/page/home/scroll/upToRefresh')
+const Swiper = () => import ('@/page/home/swiper/swiper')
 export default [
   {
     path: '*',
@@ -24,5 +25,9 @@ export default [
     path: '/UpToRefresh',
     name: 'UpToRefresh',
     component: UpToRefresh
+  },{
+    path: '/Swiper',
+    name: 'Swiper',
+    component: Swiper
   }
 ]

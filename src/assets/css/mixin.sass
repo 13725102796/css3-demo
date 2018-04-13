@@ -9,11 +9,11 @@
   display: flex
   justify-content: center
 
-@mixin bg-image($name)  // 背景图片
-  background-image: url("../images/#{name}.png")
-  background-position: center
-  background-size: cover
+@mixin bg-img($num)  // 背景图片
+  background-image: url('~@/assets/img/#{$num}.jpg')
+  background-size: 1vw*100
   background-repeat: no-repeat
+  background-clip:content-box
 
 @mixin border-line ($px, $direction)
   border-#{$direction}: $px solid $border-color
@@ -44,7 +44,7 @@
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
 @mixin animation ($name)
-  -webkit-animation: $name 1s ease infinite
+  -webkit-animation: $name 1s ease 
 
 @mixin border-line ($px, $direction)
   border-#{$direction}: $px solid $border-color

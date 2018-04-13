@@ -12,6 +12,10 @@
     <!-- <router-link to="/Infinite">infinite</router-link> -->
     <router-link to="/UpToRefresh">UpToRefresh</router-link>
   </div>
+  <div class="classify swiper">
+    <p>swiper demo</p>
+    <router-link to="/Swiper">swiper</router-link>
+  </div>
 
 </div>
 </template>
