@@ -2,44 +2,63 @@
   <div class="wrapper">
     <Header :title="'swiper'" />
     <div class="swiper-box">
-      <div class="swiper swiper1" :class="'swiper-active'+tag" >
+      <div class="swiper swiper1" 
+     
+        :style="{backgroundImage: 'url('+data[tag-1].img+')'}"
+        
+      >
         <div>
-          <span>Slice 1 - Image 1</span>
-          <span>Slice 1 - Image 2</span>
+          <span v-for="img in data"  
+            :style="{backgroundImage: 'url('+img.img+')',}"
+            :class="[tag === img.id && 'transformTop' ]"
+          >Slice 1 - Image 1</span>
+          <!-- <span>Slice 1 - Image 2</span>
           <span>Slice 1 - Image 3</span>
-          <span>Slice 1 - Image 4</span>
+          <span>Slice 1 - Image 4</span> -->
         </div>
         <div>
-          <span>Slice 2 - Image 1</span>
+          <span v-for="img in data"  
+            :style="{backgroundImage: 'url('+img.img+')'}"
+            :class="[tag === img.id && 'transformBottom' ]"
+          >Slice 1 - Image 1</span>
+          <!-- <span>Slice 2 - Image 1</span>
           <span>Slice 2 - Image 2</span>
           <span>Slice 2 - Image 3</span>
-          <span>Slice 2 - Image 4</span>
+          <span>Slice 2 - Image 4</span> -->
         </div>
         <div>
-          <span>Slice 3 - Image 1</span>
+          <span v-for="img in data"  
+            :style="{backgroundImage: 'url('+img.img+')',}"
+            :class="[tag === img.id && 'transformTop' ]"
+          >Slice 1 - Image 1</span>
+          <!-- <span>Slice 3 - Image 1</span>
           <span>Slice 3 - Image 2</span>
           <span>Slice 3 - Image 3</span>
-          <span>Slice 3 - Image 4</span>
+          <span>Slice 3 - Image 4</span> -->
         </div>
         <div>
-          <span>Slice 4 - Image 1</span>
+          <span v-for="img in data"  
+            :style="{backgroundImage: 'url('+img.img+')',}"
+            :class="[tag === img.id && 'transformBottom']"
+          >Slice 1 - Image 1</span>
+          <!-- <span>Slice 4 - Image 1</span>
           <span>Slice 4 - Image 2</span>
           <span>Slice 4 - Image 3</span>
-          <span>Slice 4 - Image 4</span>
+          <span>Slice 4 - Image 4</span> -->
         </div>
       </div>
       <div class="swiper-pagination">
-        <span :class="[tag === 1 && 'active']" @click="handleTag(1)">1</span>
-        <span :class="[tag === 2 && 'active']" @click="handleTag(2)">2</span>
+        <span v-for="item in data" :class="[tag === item.id && 'active']" @click="handleTag(item.id)">{{item.id}}</span>
+        <!-- <span :class="[tag === 2 && 'active']" @click="handleTag(2)">2</span>
         <span :class="[tag === 3 && 'active']" @click="handleTag(3)">3</span>
-        <span :class="[tag === 4 && 'active']" @click="handleTag(4)">4</span>
+        <span :class="[tag === 4 && 'active']" @click="handleTag(4)">4</span> -->
       </div>
       <div class="swiper-titles">
-					<h3 :class="[tag === 1 && 'title-active']">
-            <span>Serendipity</span>
-            <span>What you've been dreaming of</span>
+					<h3 v-for="item in data" :class="[tag === item.id && 'title-active']">
+            <span>{{item.title}}</span>
+            <span>{{item.desc}}</span>
           </h3>
-					<h3 :class="[tag === 2 && 'title-active']">
+					<!-- <h3 :class="[tag === 2 && 'title-active']">
             <span>Adventure</span>
             <span>Where the fun begins</span>
           </h3>
@@ -50,7 +69,7 @@
 					<h3 :class="[tag === 4 && 'title-active']">
             <span>Serenity</span>
             <span>When silence touches nature</span>
-          </h3>
+          </h3> -->
 			</div>
     </div>
   </div>
@@ -64,32 +83,62 @@ export default {
   data(){
     return {
       tag: 1,  
-      frist: false
-      // data: [
-      //   {
-      //     img: 'swiper1.jpg',
-      //     title: 'title1',
-
-      //   }
-      // ]
-        
-        
+      data: [
+        {
+          id: 1,
+          img: 'http://localhost:8080/static/img/swiper1.35449c7.jpg',
+          title: 'title1',
+          desc: 'this is the desc1'
+        },{
+          id: 2,
+          img: 'http://localhost:8080/static/img/swiper2.4c5bfc7.jpg',
+          title: 'title2',
+          desc: 'this is the desc2'
+        },{
+          id: 3,
+          img: 'http://localhost:8080/static/img/swiper3.06cf7ca.jpg',
+          title: 'title3',
+          desc: 'this is the desc3'
+        },{
+          id: 4,
+          img: 'http://localhost:8080/static/img/swiper4.fcd45e1.jpg',
+          title: 'title4',
+          desc: 'this is the desc4'
+        },{
+          id: 5,
+          img: 'http://localhost:8080/static/img/swiper3.06cf7ca.jpg',
+          title: 'title5',
+          desc: 'this is the desc5'
+        }
+      ],
+      setIntervalNum: '' , 
     }
   },
-  mounted(){
+  created(){
     this.intervalTag()
-    
   },
   methods: {
     handleTag(tag){
       this.tag = tag
+      if(this.setIntervalNum) {
+        let state = false
+        clearInterval(this.setIntervalNum)
+        if(!state) {
+          state = true
+          setTimeout(()=>{
+            this.intervalTag()
+            state = false
+          },2000)
+        }
+      }
     },
-    intervalTag(){
-      setInterval(this.addTag,4000)
+    intervalTag(){ 
+      const interval = setInterval(this.addTag,4000)
+      this.setIntervalNum = interval
     },
     addTag(){
-      console.log(this.tag)
-      if(this.tag === 4){
+      // console.log(this.tag)
+      if(this.tag === this.data.length){
         this.tag = 1
       } else {
         this.tag ++ 
@@ -102,7 +151,6 @@ export default {
 @import '~@/assets/css/mixin'
 // @mixin bgImg($num)
 //   background: url('~@/assets/img/swiper#{$num}.jpg') no-repeat
-
 .swiper-titles h3 
   position: absolute
   top: 45%
@@ -146,7 +194,9 @@ export default {
   display: flex
   transition: all 0s .6s
   overflow: hidden
-  background: #fff
+  background-image: url('~@/assets/img/swiper1.jpg')
+  // background-size: 100vw
+  background-clip: content-box
   div
     position: relative
     width: 25%
@@ -166,18 +216,18 @@ export default {
       text-indent: -9000px
       transform-style: preserve-3d
       transition: all .7s ease-out 
-      &:nth-child(1)
-        +bg-img(swiper1)
-      &:nth-child(2)
-        +bg-img(swiper2)
-      &:nth-child(3)
-        +bg-img(swiper3)
-      &:nth-child(4)
-        +bg-img(swiper4)
+      background-size: 1vw*100
+      // &:nth-child(1)
+      //   +bg-img(swiper1)
+      // &:nth-child(2)
+      //   +bg-img(swiper2)
+      // &:nth-child(3)
+      //   +bg-img(swiper3)
+      // &:nth-child(4)
+      //   +bg-img(swiper4)
     &:nth-child(1)
       span
         background-position: 0% 0px
-        
     &:nth-child(2)
       span
         background-position: 33.3% 0px
@@ -194,10 +244,12 @@ export default {
       span
         top: -5rem
     //动画类的定义
-
-
+.transformTop 
+  transform: translateY(-5rem)
+.transformBottom
+  transform: translateY(5rem)
 .swiper-active1
-  +bg-img(swiper1)
+  // +bg-img(swiper1)
   div:nth-child(odd)
     span:nth-child(1)
       transform: translateY(-5rem)
@@ -206,7 +258,7 @@ export default {
       transform: translateY(5rem)
 
 .swiper-active2
-  +bg-img(swiper2)
+  // +bg-img(swiper2)
   div:nth-child(odd)
     span:nth-child(2)
       transform: translateY(-5rem)
@@ -214,7 +266,7 @@ export default {
     span:nth-child(2)
       transform: translateY(5rem)
 .swiper-active3
-  +bg-img(swiper3)
+  // +bg-img(swiper3)
   div:nth-child(odd)
     span:nth-child(3)
       transform: translateY(-5rem)
@@ -222,7 +274,7 @@ export default {
     span:nth-child(3)
       transform: translateY(5rem)
 .swiper-active4
-  +bg-img(swiper4)
+  // +bg-img(swiper4)
   div:nth-child(odd)
     span:nth-child(4)
       transform: translateY(-5rem)
