@@ -5,11 +5,12 @@
   // adjust body font size
   function setBodyFontSize () {
     if (document.body) {
-      if(dpr > 2 ) {
-        document.body.style.fontSize = 24+'px'
+      if(dpr >=3 && dpr < 4 ) {
+        document.body.style.fontSize = 28+'px'
       } else {
         document.body.style.fontSize = (12 * dpr) + 'px'
       }
+      // document.body.style.fontSize = (12 * dpr) + 'px'
       
     }
     else {

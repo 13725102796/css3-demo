@@ -16,6 +16,10 @@
     <p>swiper demo</p>
     <router-link to="/Swiper">swiper</router-link>
   </div>
+  <div class="classify menu">
+    <p>menu demo</p>
+    <router-link to="/Menu">menu</router-link>
+  </div>
 
 </div>
 </template>
