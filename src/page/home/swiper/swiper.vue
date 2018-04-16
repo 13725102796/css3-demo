@@ -3,9 +3,7 @@
     <Header :title="'swiper'" />
     <div class="swiper-box">
       <div class="swiper swiper1" 
-     
-        :style="{backgroundImage: 'url('+data[tag-1].img+')'}"
-        
+        :style="{backgroundImage: 'url('+data[tag-1].img+')'}"     
       >
         <div>
           <span v-for="img in data"  
@@ -21,30 +19,18 @@
             :style="{backgroundImage: 'url('+img.img+')'}"
             :class="[tag === img.id && 'transformBottom' ]"
           >Slice 1 - Image 1</span>
-          <!-- <span>Slice 2 - Image 1</span>
-          <span>Slice 2 - Image 2</span>
-          <span>Slice 2 - Image 3</span>
-          <span>Slice 2 - Image 4</span> -->
         </div>
         <div>
           <span v-for="img in data"  
             :style="{backgroundImage: 'url('+img.img+')',}"
             :class="[tag === img.id && 'transformTop' ]"
           >Slice 1 - Image 1</span>
-          <!-- <span>Slice 3 - Image 1</span>
-          <span>Slice 3 - Image 2</span>
-          <span>Slice 3 - Image 3</span>
-          <span>Slice 3 - Image 4</span> -->
         </div>
         <div>
           <span v-for="img in data"  
             :style="{backgroundImage: 'url('+img.img+')',}"
             :class="[tag === img.id && 'transformBottom']"
           >Slice 1 - Image 1</span>
-          <!-- <span>Slice 4 - Image 1</span>
-          <span>Slice 4 - Image 2</span>
-          <span>Slice 4 - Image 3</span>
-          <span>Slice 4 - Image 4</span> -->
         </div>
       </div>
       <div class="swiper-pagination">
@@ -115,7 +101,7 @@ export default {
     }
   },
   created(){
-    this.intervalTag()
+    // this.intervalTag()
   },
   methods: {
     handleTag(tag){
@@ -149,8 +135,6 @@ export default {
 </script>
 <style lang="sass" scoped>
 @import '~@/assets/css/mixin'
-// @mixin bgImg($num)
-//   background: url('~@/assets/img/swiper#{$num}.jpg') no-repeat
 .swiper-titles h3 
   position: absolute
   top: 45%
@@ -194,17 +178,19 @@ export default {
   display: flex
   transition: all 0s .6s
   overflow: hidden
-  background-image: url('~@/assets/img/swiper1.jpg')
-  // background-size: 100vw
-  background-clip: content-box
+  // background-image: url('~@/assets/img/swiper1.jpg')
+  background-size: 100vw
+  // background-clip: content-box
+  // z-index: 3
   div
     position: relative
     width: 25%
     height: 100%
     font-size: $desc-size
-    &:nth-child(n+1)
-      border-left: 1px solid #fff
-      border-image: linear-gradient(rgba(0,0,0,0),rgba(255,255,255,1)) 1
+    box-sizing: border-box
+    &:nth-child(n+2)
+      border-left: 1px solid 
+      border-image: linear-gradient(rgba(225,225,225,0),rgba(225,225,225,.7)) 30 30
     span
       display: inline-block
       position: absolute
@@ -248,39 +234,39 @@ export default {
   transform: translateY(-5rem)
 .transformBottom
   transform: translateY(5rem)
-.swiper-active1
-  // +bg-img(swiper1)
-  div:nth-child(odd)
-    span:nth-child(1)
-      transform: translateY(-5rem)
-  div:nth-child(even)
-    span:nth-child(1)
-      transform: translateY(5rem)
+// .swiper-active1
+//   // +bg-img(swiper1)
+//   div:nth-child(odd)
+//     span:nth-child(1)
+//       transform: translateY(-5rem)
+//   div:nth-child(even)
+//     span:nth-child(1)
+//       transform: translateY(5rem)
 
-.swiper-active2
-  // +bg-img(swiper2)
-  div:nth-child(odd)
-    span:nth-child(2)
-      transform: translateY(-5rem)
-  div:nth-child(even)
-    span:nth-child(2)
-      transform: translateY(5rem)
-.swiper-active3
-  // +bg-img(swiper3)
-  div:nth-child(odd)
-    span:nth-child(3)
-      transform: translateY(-5rem)
-  div:nth-child(even)
-    span:nth-child(3)
-      transform: translateY(5rem)
-.swiper-active4
-  // +bg-img(swiper4)
-  div:nth-child(odd)
-    span:nth-child(4)
-      transform: translateY(-5rem)
-  div:nth-child(even)
-    span:nth-child(4)
-      transform: translateY(5rem)
+// .swiper-active2
+//   // +bg-img(swiper2)
+//   div:nth-child(odd)
+//     span:nth-child(2)
+//       transform: translateY(-5rem)
+//   div:nth-child(even)
+//     span:nth-child(2)
+//       transform: translateY(5rem)
+// .swiper-active3
+//   // +bg-img(swiper3)
+//   div:nth-child(odd)
+//     span:nth-child(3)
+//       transform: translateY(-5rem)
+//   div:nth-child(even)
+//     span:nth-child(3)
+//       transform: translateY(5rem)
+// .swiper-active4
+//   // +bg-img(swiper4)
+//   div:nth-child(odd)
+//     span:nth-child(4)
+//       transform: translateY(-5rem)
+//   div:nth-child(even)
+//     span:nth-child(4)
+//       transform: translateY(5rem)
     
 
 

@@ -2,6 +2,11 @@
 
 > A Vue.js project
 
+## Introduction
+``` bash
+  这是一个css3demo库，里面有各种css的特效组件，拿来即用。
+  如： swiper scroll infinite toast ....
+```
 ## Build Setup
 
 ``` bash
@@ -18,4 +23,3 @@ npm run build
 npm run build --report
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
