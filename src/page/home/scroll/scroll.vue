@@ -3,13 +3,13 @@
     <Header :title="'scroll'" />
     <div class="nav">
       <div class="list">
-        <span class="item" :class="[tag === 1 && 'active']"  @click="handleNav(1)">全部</span>
-        <span class="item" :class="[tag === 2 && 'active']"  @click="handleNav(2)">待付款</span>
+        <span v-for="item in navData" class="item" :class="[tag === item.id && 'active']"  @click="handleNav(item.id)">{{item.text}}</span>
+        <!-- <span class="item" :class="[tag === 2 && 'active']"  @click="handleNav(2)">待付款</span>
         <span class="item" :class="[tag === 3 && 'active']"  @click="handleNav(3)">待使用</span>
         <span class="item" :class="[tag === 4 && 'active']"  @click="handleNav(4)">待评价</span>
         <span class="item" :class="[tag === 5 && 'active']"  @click="handleNav(5)">退款/售后</span>
         <span class="item" :class="[tag === 6 && 'active']"  @click="handleNav(6)">退款/售后</span>
-        <span class="item" :class="[tag === 7 && 'active']"  @click="handleNav(7)">退款/售后</span>    
+        <span class="item" :class="[tag === 7 && 'active']"  @click="handleNav(7)">退款/售后</span>     -->
         <div class="line" :style="{left: (tag-1)*20 + '%'}"></div>
       </div>  
     </div>
@@ -21,6 +21,30 @@ export default {
   data(){
     return {
       tag: 1,
+      navData: [
+        {
+          id: 1,
+          text: '全部 '
+        },{
+          id: 2,
+          text: '待付款 '
+        },{
+          id: 3,
+          text: '待使用 '
+        },{
+          id: 4,
+          text: '待评价 '
+        },{
+          id: 5,
+          text: '退款/售后'
+        },{
+          id: 6,
+          text: '全部 '
+        },{
+          id: 7,
+          text: '全部 '
+        },
+      ]
     }
    
   },

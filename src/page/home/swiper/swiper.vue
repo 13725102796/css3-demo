@@ -61,6 +61,12 @@
   </div>
 </template>
 <script>
+/**
+  使用方法：
+    直接替换this.data的数据就可以了 img必须是线上的图片地址，
+    或者可以将其写死，对应附上对应的class
+    因为动态绑定的backgroundImage 貌似不能动态引入url
+ */
 import Header from '@/commond/header.vue'
 export default {
   components:{
@@ -101,7 +107,7 @@ export default {
     }
   },
   created(){
-    // this.intervalTag()
+    this.intervalTag()
   },
   methods: {
     handleTag(tag){
@@ -120,6 +126,7 @@ export default {
     },
     intervalTag(){ 
       const interval = setInterval(this.addTag,4000)
+      clearInterval(this.setIntervalNum)
       this.setIntervalNum = interval
     },
     addTag(){
@@ -178,8 +185,11 @@ export default {
   display: flex
   transition: all 0s .6s
   overflow: hidden
-  // background-image: url('~@/assets/img/swiper1.jpg')
-  background-size: 100vw
+  background-image: url('~@/assets/img/swiper1.jpg')
+  background-image: url('~@/assets/img/swiper2.jpg')
+  background-image: url('~@/assets/img/swiper3.jpg')
+  background-image: url('~@/assets/img/swiper4.jpg')
+  background-size: 400%
   // background-clip: content-box
   // z-index: 3
   div
@@ -202,7 +212,7 @@ export default {
       text-indent: -9000px
       transform-style: preserve-3d
       transition: all .7s ease-out 
-      background-size: 1vw*100
+      background-size: 400%
       // &:nth-child(1)
       //   +bg-img(swiper1)
       // &:nth-child(2)

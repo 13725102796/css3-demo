@@ -4,7 +4,7 @@
     <div class="card-box">
       <Scroll :on-refresh="onRefresh" :on-infinite="onInfinite" >
         <div class="scroll-box">
-          <p>数据填充</p>
+          <p>下拉刷新</p>
           <p>数据填充</p>
           <p>数据填充</p>
           <p>数据填充</p>

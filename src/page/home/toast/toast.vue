@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper toast">
     <Header :title="'toast'" />
-    <p class="title">toast效果展示</p>
+    <p class="title">点击效果展示</p>
     <ul>
       <li @click="useWho('translateX')" >
         <btn :text="'translateX'" />
@@ -25,6 +25,16 @@
   </div>
 </template>
 <script>
+/**
+* params(String) msg 提示文本
+* params(Number) ms  延时毫秒 默认2s
+* params(String) method 动画方法 默认 entry
+  this.$toast(msg, ms. method)
+
+  插件封装在src/plugins下
+  在main.js里注册全局后，
+  
+ */
 import Btn from '@/components/button.vue'
 import Header from '@/commond/header.vue'
 export default {

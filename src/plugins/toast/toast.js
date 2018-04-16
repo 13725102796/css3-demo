@@ -2,8 +2,9 @@ import Toast from './toast.vue'
 /**
  * params(String) msg 提示文本
  * params(Number) ms  延时毫秒 默认2s
+ * params(String) method 动画方法 默认 entry
  * 使用方法 use 
- *  vm.$toast(msg,ms) 
+ *  vm.$toast(msg,ms,method) 
  */
 export default {
   install(Vue,options={}) {

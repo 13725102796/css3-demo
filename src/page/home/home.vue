@@ -1,6 +1,6 @@
 <template>
 <div class="wrapper Home">
-  <div class="title">home</div>
+  <!-- <div class="title">home</div> -->
   <div class="classify transform">
     <p>transform demo</p>
     <router-link to="/Nav">nav</router-link>
@@ -30,6 +30,7 @@ export default {
   a
     margin: 0 .2rem
     display: inline-block
+    text-decoration: underline
 </style>
 
 
