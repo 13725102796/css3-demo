@@ -83,6 +83,7 @@ export default {
       box-sizing: border-box
       transition: all 1s ease
       span
+        text-transform: uppercase
         display: block
         padding: .1rem .2rem
         &:nth-child(1)
@@ -90,11 +91,13 @@ export default {
           font-family: 'Alegreya SC', Georgia, serif
           color: #ddd
         &:nth-child(2)
-          font-size: .5rem
+          font-size: .45rem
           font-family: 'Alegreya SC', Georgia, serif
           font-style: italic
           color: #333
           transition: all 1s ease
+          &:first-letter
+            font-size: .55rem
     img
       // display: none
       height: 1.8*4rem
@@ -108,8 +111,9 @@ export default {
       z-index: 0
 
 .active
+  background: rgba(225,239,240, .8)
   a
-    background: rgba(255,255,255, 1)
+    // background: rgba(255,255,255, 1)
     // span:nth-child(2)
     //   color: red!important
   img

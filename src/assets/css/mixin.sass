@@ -15,8 +15,11 @@
   background-repeat: no-repeat
   background-clip:content-box
 
-@mixin border-line ($px, $direction)
-  border-#{$direction}: $px solid $border-color
+@mixin border-line ($px, $direction:all) 
+  @if $direction == 'all'
+    border: $px solid $border-color
+  @else
+    border-#{$direction}: $px solid $border-color
 
 @mixin mask($color:#e2e2e2c7,$zIndex: 20)
   // padding: 0
@@ -46,5 +49,9 @@
 @mixin animation ($name)
   -webkit-animation: $name 1s ease 
 
-@mixin border-line ($px, $direction)
-  border-#{$direction}: $px solid $border-color
+@mixin title 
+  font-size: $title-size
+  color: $title-color
+@mixin desc
+  font-size: $desc-size
+  color: $desc-color  

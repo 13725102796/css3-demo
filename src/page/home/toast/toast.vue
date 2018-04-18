@@ -44,7 +44,7 @@ export default {
   },
   methods: {
     useWho(tag,top) {
-      top ? this.$toast(tag,2500,tag,top) : this.$toast(tag,2500,tag)    
+      top ? this.$toast({msg:tag,ms:2500,method:tag,top:top}) : this.$toast({msg:tag,ms:2500,method:tag})    
     }
   }
 }

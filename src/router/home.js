@@ -5,6 +5,8 @@ const Scroll = () => import ('@/page/home/scroll/scroll')
 const UpToRefresh = () => import ('@/page/home/scroll/upToRefresh')
 const Swiper = () => import ('@/page/home/swiper/swiper')
 const Menu = () => import ('@/page/home/menu/menu')
+const Validator = () => import ('@/page/home/validator/validator')
+
 export default [
   {
     path: '*',
@@ -34,5 +36,9 @@ export default [
     path: '/Menu',
     name: 'Menu',
     component: Menu
+  },{
+    path: '/Validator',
+    name: 'Validator',
+    component: Validator
   }
 ]

@@ -99,6 +99,14 @@ html {
 .bottom {
   height: 1.8rem
 }
+button{
+  border: none;
+  background: none;
+  font-size: .4rem;
+}
+button:focus{
+  outline: none
+}
 
 @font-face {
   font-family: 'FontAwesome';

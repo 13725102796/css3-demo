@@ -20,6 +20,10 @@
     <p>menu demo</p>
     <router-link to="/Menu">menu</router-link>
   </div>
+  <div class="classify menu">
+    <p>validator demo</p>
+    <router-link to="/Validator">validator</router-link>
+  </div>
 
 </div>
 </template>

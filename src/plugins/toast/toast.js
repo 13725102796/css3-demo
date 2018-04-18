@@ -9,7 +9,7 @@ import Toast from './toast.vue'
 export default {
   install(Vue,options={}) {
     let toast = null
-    Vue.prototype.$toast = (msg,ms = 2000,method = 'entry',top) => {
+    Vue.prototype.$toast = (obj={}) => {
       if(!toast) {
         const com = Vue.extend(Toast)
         toast = new com
@@ -17,9 +17,15 @@ export default {
           toast.$mount()
           document.querySelector('body').appendChild(toast.$el)
         }
-      }  
+      }
+      const msg = obj.msg , 
+            mask = obj.mask === false ? false : true,
+            ms = obj.ms || 2000,
+            method = obj.method || 'entry',
+            top = obj.top || null
+      console.log(mask)
       toast.show = true  
-      toast.delayed(msg,ms,method,top)
+      toast.delayed(msg,mask,ms,method,top)
             
     }
   }

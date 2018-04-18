@@ -1,9 +1,16 @@
 <template>
-  <div class="container" v-show="show">
+<div>
+  <div v-if="mask" class="container" v-show="show">
     <div class="position">
       <p :style="{animation: style,transformOrigin: origin }" >{{msg}}</p>
     </div>   
   </div>
+  <div v-else class="nomask" v-show="show">
+    <div class="position">
+      <p class="tips" >{{msg}}</p>
+    </div> 
+  </div>
+</div>
 </template>
 <script>
 export default {
@@ -11,14 +18,16 @@ export default {
     return {
       show: true,
       msg: '',
+      mask: true,
       // ms: 2,
       style: 'entry 2s ease',
       origin: 'center center'
     }
   },
   methods: {
-    delayed(msg,ms,method,top){
-      
+    delayed(msg,mask,ms,method,top){
+      console.log(mask)
+      this.mask = mask
       this.msg = msg
       // this.ms = ms/1000 
       this.style = (method+ ' ' +ms/800 + 's' + ' ' + 'ease').toString() 
@@ -34,19 +43,33 @@ export default {
 </script>
 <style lang="sass" scoped>
 @import '~@/assets/css/mixin.sass'
+.nomask
+  .tips
+    background: rgba(0,0,0,.75)
+    color: #fff
+    padding: .25rem .5rem
+    border-radius: .15rem 
+    font-size: $title-size
+.position
+  position: fixed
+  left: 50%
+  top: 50%
+  transform: translate3d(-50%,-50%,0)
+  font-size: $desc-size
+  color: $desc-color
 .container
   +mask(rgba(0,0,0,.3),9999)
-  .position
-    position: fixed
-    left: 50%
-    top: 50%
-    transform: translate3d(-50%,-50%,0)
-    font-size: $desc-size
-    color: $desc-color
-    p   
-      padding: .5rem 1rem
-      background: #fff
-      transform-style: preserve-3d
+  // .position
+  //   position: fixed
+  //   left: 50%
+  //   top: 50%
+  //   transform: translate3d(-50%,-50%,0)
+  //   font-size: $desc-size
+  //   color: $desc-color
+  p   
+    padding: .5rem 1rem
+    background: #fff
+    transform-style: preserve-3d
       // animation-timing-function: ease
       // -webkit-animation: entry 2s ease
     // .leave
