@@ -23,7 +23,7 @@ export default {
             ms = obj.ms || 2000,
             method = obj.method || 'entry',
             top = obj.top || null
-      console.log(mask)
+
       toast.show = true  
       toast.delayed(msg,mask,ms,method,top)
             

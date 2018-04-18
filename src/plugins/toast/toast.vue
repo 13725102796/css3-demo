@@ -7,7 +7,7 @@
   </div>
   <div v-else class="nomask" v-show="show">
     <div class="position">
-      <p class="tips" >{{msg}}</p>
+      <p class="tips" ><span>{{msg}}</span></p>
     </div> 
   </div>
 </div>
@@ -45,7 +45,7 @@ export default {
 @import '~@/assets/css/mixin.sass'
 .nomask
   .tips
-    background: rgba(0,0,0,.75)
+    background: #000000e0
     color: #fff
     padding: .25rem .5rem
     border-radius: .15rem 

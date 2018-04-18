@@ -53,7 +53,7 @@ export default {
       this.tag = tag
     },
     submit(){
-      alert('提交成功')
+      this.$toast({msg:'提交成功'})
     }
 
   }
