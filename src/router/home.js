@@ -6,6 +6,7 @@ const UpToRefresh = () => import ('@/page/home/scroll/upToRefresh')
 const Swiper = () => import ('@/page/home/swiper/swiper')
 const Menu = () => import ('@/page/home/menu/menu')
 const Validator = () => import ('@/page/home/validator/validator')
+const Video = () => import ('@/page/home/video/video')
 
 export default [
   {
@@ -40,5 +41,9 @@ export default [
     path: '/Validator',
     name: 'Validator',
     component: Validator
+  },{
+    path: '/Video',
+    name: 'Video',
+    component: Video
   }
 ]

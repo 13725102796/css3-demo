@@ -24,6 +24,10 @@
     <p>validator demo</p>
     <router-link to="/Validator">validator</router-link>
   </div>
+  <div class="classify menu">
+    <p>video meno</p>
+    <router-link to="/Video">video</router-link>
+  </div>
 
 </div>
 </template>
