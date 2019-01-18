@@ -1,9 +1,5 @@
 import Loading from './loading.vue'
-/**
- *  params(boolean) bool 控制loading插件的显隐切换 默认 true
- *  使用方法 use
- *    vm.$loading() || vm.$laoding(false)
- */
+
 export default {
   install(Vue,options = {}) {
     let loading = null 

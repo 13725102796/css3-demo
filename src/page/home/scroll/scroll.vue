@@ -66,15 +66,16 @@ export default {
 .nav 
   overflow: hidden
   margin-bottom: .4rem
-  height: 44px
+  height: 50px
   padding-top: .2rem
+  background: #fff
   .list  
     font-size: $desc-size 
     color: #111 
     background: #fff    
     overflow-y: hidden
     overflow-x: auto
-    height: 55px
+    height: 62px
     position: relative
     display: flex
     width: 100%

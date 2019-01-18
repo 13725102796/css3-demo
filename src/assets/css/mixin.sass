@@ -54,4 +54,46 @@
   color: $title-color
 @mixin desc
   font-size: $desc-size
-  color: $desc-color  
+  color: $desc-color 
+
+
+
+  
+@mixin line-before-after
+  display: block
+  position: relative
+  &:after
+    background: #FE2C60
+    content: ""
+    height: 1px
+    position: absolute
+    top: 44%
+    width: 15px
+    right: 34%
+  &:before
+    background: #FE2C60
+    content: ""
+    height: 1px
+    position: absolute
+    top: 44%
+    width: 15px
+    left: 34%
+
+@mixin edit
+  background: url("~@/assets/img/common/edit@2x.png") #FFF no-repeat center
+  background-size: cover
+  width: 20px;
+  height: 20px;
+
+@mixin btn
+  width: 303px
+  height: 40px
+  line-height: 40px
+  text-align: center
+  background: #FE2C60
+  color: #fff
+  margin: 30px auto 0 auto
+  border-radius: 2.5px
+
+
+ 

@@ -31,7 +31,8 @@ export default {
   data(){
     return {
       playerOptions: {
-        height: '360',
+        height: '240',
+        width: '280',
         playbackRates: [0.7, 1, 1.3, 1.5, 1.7],
         sources: [{
           type: "video/mp4",
@@ -111,8 +112,8 @@ export default {
 <style lang="sass" scoped>
 @import '~@/assets/css/mixin'
 .vjs-custom-skin
-  height: 500px
-  width: 600px
+  height: 250x
+  width: 300px
   margin: 0 auto
 .upload
   font-size: .4rem
@@ -120,8 +121,8 @@ export default {
 </style>
 <style lang="sass">
 #vjs_video_3
-  height: 500px
-  width: 600px
+  height: 250px
+  width: 300px
 //全屏样式
 .video-js .vjs-tech
   position: relative
@@ -156,8 +157,8 @@ export default {
   padding: 0
 // 小的样式
 .vjs_video_604-dimensions
-  height: 500px
-  width: 600px
+  height: 250px
+  width: 300px
 </style>
 
 

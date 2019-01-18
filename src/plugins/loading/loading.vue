@@ -27,16 +27,17 @@ export default {
 <style lang="sass" scoped>
 @import '~@/assets/css/mixin.sass'
 .loading           
-	// height: .6rem
-	padding: .25rem 0 
+	height: .7rem
+	// padding: .5rem 0 
+  background: none
   
 .loading span   
 	display: inline-block  
 	width: 2px 
 	height: 100%  
 	background: lightgreen 
-	/* -webkit-animation: load 1s ease infinite;    */
-	+animation(load)
+	-webkit-animation: load 1s ease infinite
+	// +animation(load)
   
 @keyframes load  
 	0%,100%  
@@ -62,5 +63,3 @@ export default {
    
   
 </style>
-
-

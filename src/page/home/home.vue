@@ -28,10 +28,11 @@
     <p>video meno</p>
     <router-link to="/Video">video</router-link>
   </div>
-
+  <van-button plain type="primary" @click="$router.push('/plugin')">插件篇</van-button>
 </div>
 </template>
 <script>
+
 export default {
   name: 'Home'
 }

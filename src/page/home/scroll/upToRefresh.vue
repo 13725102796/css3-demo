@@ -42,7 +42,7 @@ export default {
     onRefresh(done) {
       setTimeout(()=>{
         done()
-        this.$toast('添加成功')
+        this.$toast({msg: '添加成功'})
       },2000)
     },
     onInfinite(done) {
@@ -61,7 +61,7 @@ export default {
 <style lang="sass" scoped>
 @import '~@/assets/css/mixin'
 .card-box 
-  // height: 100%
+  height: calc(100vh - 1.2rem)
   position: relative
   .scroll-box
     p
