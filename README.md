@@ -1,25 +1,21 @@
-# yes
+# css3 vue demo
 
 > A Vue.js project
 
 ## Introduction
 ``` bash
-  这是一个css3demo库，里面有各种css的特效组件，拿来即用。
+  这是一个使用vue来写的demo库，里面有各种css的特效组件，常用的实战开发组件，拿来即用。
   如： swiper scroll infinite toast ....
 ```
-## Build Setup
+## 使用方法
 
 ``` bash
-# install dependencies
-npm install
-
+# git clone https://github.com/13725102796/css3-demo.git
+# cd css3-demo
+# npm i
 # serve with hot reload at localhost:8080
 npm run dev
 
-# build for production with minification
-npm run build
 
-# build for production and view the bundle analyzer report
-npm run build --report
 ```
 
