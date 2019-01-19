@@ -61,7 +61,7 @@ ol, ul, li {
 }
 
 input, textarea, select, button {
-  font: 1.4rem Verdana, Helvetica, Arial, sans-serif;
+  font: .4rem Verdana, Helvetica, Arial, sans-serif;
 }
 
 table {
@@ -106,6 +106,10 @@ button{
 }
 button:focus{
   outline: none
+}
+
+.flex_box{
+  display: flex
 }
 
 @font-face {

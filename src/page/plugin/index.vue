@@ -65,8 +65,10 @@ export default {
   .cate_item
     font-size: 15px
     color: #333
-    margin: 26px 0
+    margin: 15px 0
     padding: 1px 0
+    height: 30px
+    line-height: 30px
   .active
     color: #FE2C60
     background: #FFF6F7
