@@ -74,7 +74,7 @@ export default {
     background: #FFF6F7
     border-left: 2px solid #FE2C60
 .category_wrapper
-  padding: 20px 10px 10px
+  // padding: 20px 10px 10px
   box-sizing: border-box
 .cate_title
   span
