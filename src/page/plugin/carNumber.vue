@@ -1,6 +1,7 @@
 <template>
   <div class="">
     <div id="plateNumapp"></div>  
+    <div style="font-size: .4rem; padding-top: 10px;">车牌号： {{form.licence_plate}}</div>
   </div>  
 </template>
 <script>
@@ -24,6 +25,7 @@ export default {
       onBtnSaveClick: ()=>{
         // alert('213')
         this.form.licence_plate = input.getNumber()
+        console.log(this.form.licence_plate)
         // this.$router.push({path:'/adds', query: this.form})
         // console.log(input.getNumber())
       }
@@ -88,9 +90,12 @@ export default {
   .keyboard-row:not(:first-child) 
     margin-bottom: 10px!important
     .keyboard-item  
-      font-size: 18px!important
-      height: 50px!important
+      font-size: 16px!important
+      height: 40px!important
 
+#keyboardWrapper 
+  .keyboard-row
+    width: 75vw!important
       
 </style>
 

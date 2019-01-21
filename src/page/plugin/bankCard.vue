@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="padding: 20px 10px;">
     <van-radio-group class="flex_box radius_box" v-model="cardType">
       <van-radio name="1">个人</van-radio>
       <van-radio name="2">企业</van-radio>
@@ -93,6 +93,7 @@ export default {
 .radius_box
   padding: 10px 0
   text-align: center
+  font-size: 16px
 .tips
   color: #888
   font-size: 14px
