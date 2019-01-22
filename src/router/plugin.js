@@ -2,6 +2,7 @@ export default [
   {
     path: '/plugin',
     name: 'plugin',
+    redirect: '/plugin/bankCard',
     component: ()=> import ('@/page/plugin/index'),
     children: [{
       path: 'bankCard',

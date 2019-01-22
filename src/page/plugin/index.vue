@@ -42,7 +42,7 @@ export default {
     onClick (index) {
       if(this.currentRoute == index) return
       this.currentRoute = index
-      this.$router.push('/plugin' + index)
+      this.$router.replace('/plugin' + index)
       // 此处切换数据
     },
   }
