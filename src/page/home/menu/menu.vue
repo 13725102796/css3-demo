@@ -3,13 +3,10 @@
     <Header :title="'Menu'"/>
     <section class="container">
       <ul class="mh-menu">
-				<li v-for="item in data" :class="[tag === item.id && 'active']">
+				<li v-for="(item,idx) in data" :key="idx"  :class="[tag === item.id && 'active']">
           <a @click="handleNav(item.id)"><span>{{item.title}}</span> <span :style="{color: (tag === item.id ? item.color : '')}">{{item.desc}}</span></a>
           <img src="~@/assets/img/menu3.jpg" />
         </li>
-				<!-- <li :class="[tag === 2 && 'active']"><a @click="handleNav(2)"><span>Production Coordinator</span> <span>Francis Morgan</span></a><img src="~@/assets/img/menu2.jpg" alt="image02"/></li>
-				<li :class="[tag === 3 && 'active']"><a @click="handleNav(3)"><span>Sound</span> <span>Kevin Schneider</span></a><img src="~@/assets/img/menu3.jpg" alt="image03"/></li>
-				<li :class="[tag === 4 && 'active']"><a @click="handleNav(4)"><span>Casting</span> <span>Benjamin Zakalis</span></a><img src="~@/assets/img/menu4.jpg" alt="image04"/></li> -->
 			</ul>
     </section>
   </div>
