@@ -12,6 +12,10 @@ export default [
       path: 'carNumber',
       name: 'carNumber',
       component: ()=> import ('@/page/plugin/carNumber')
+    },{
+      path: 'ossImg',
+      name: 'ossImg',
+      component: ()=> import ('@/page/plugin/ossImg')
     },]
   },
 ]

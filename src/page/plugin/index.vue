@@ -24,7 +24,7 @@ Vue.use(Row).use(Col);
 export default {
   data() {
     return {
-      currentRoute: '/bankCard',
+      currentRoute: location.pathname.split('plugin')[1],
       searchWord: "",
       flag: true,
       categoryList: [
@@ -34,6 +34,9 @@ export default {
         },{
           title: "银行卡",
           route: "/bankCard"
+        },{
+          title: "oss上传",
+          route: "/ossImg"
         },
       ],
     };
@@ -45,7 +48,11 @@ export default {
       this.$router.replace('/plugin' + index)
       // 此处切换数据
     },
-  }
+    
+  },
+  created(){
+      // console.log(location.pathname.split('plugin')[1])
+    }
 };
 </script>
 
