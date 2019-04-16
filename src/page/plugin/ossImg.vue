@@ -61,12 +61,10 @@ export default {
   methods: {
     // add photo
     async onRead(file) {
-      // if(!this.checkImg(file.file)) return
-      // this.lrzImage(file.file)
-      oss.upload(file.file,(url)=>{
-        console.log(url)
-        this.pic.push(url);
-      })
+      // oss.upload(file.file,(url)=>{
+      //   console.log(url)
+      //   this.pic.push(url);
+      // })
     },
     delPhoto(i) {
       console.log(i);
