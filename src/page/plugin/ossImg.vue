@@ -21,7 +21,7 @@
             </div>
           </div>   
         </div>
-         <!-- <van-button class="service" @click="submit"  v-if="$route.query.id == 0">提交申请</van-button> -->
+         <van-button class="service" @click="submit" >上传图片</van-button>
     </div>
 </template>
 
@@ -35,16 +35,16 @@ import ossImg from 'testnpm_zyc'
 
 const oss = new ossImg({
   // aliyun oss config
-  uploadImageUrl: 'http://xzysaas.oss-cn-shenzhen.aliyuncs.com', //默认存在根目录，可根据需求改
-  AccessKeySecret: 'R3aPVSVEBbJXiE0ParCQf9foGPLbm8',
-  OSSAccessKeyId: 'LTAIrewlzXbuN7a9',
-  imgPolicy: 'eyJleHBpcmF0aW9uIjoiMjA1MC0wMS0wMVQxMjowMDowMC4wMDBaIiwiY29uZGl0aW9ucyI6W1siY29udGVudC1sZW5ndGgtcmFuZ2UiLDAsMjA5NzE1Ml1dfQ==',
-  imgSignature: 'g1+MVqStG0CFvWtgGalY5m2f5gg=',
+  uploadImageUrl: 'http://xzygo.oss-cn-shenzhen.aliyuncs.com', //默认存在根目录，可根据需求改
+  AccessKeySecret: 'SLCjMuerijhi4A66gbr5LGjqqhYmMni',
+  OSSAccessKeyId: 'LTAIPWNRp7uMlW1li',
+  imgPolicy: 'eyJleHBpcmF0aW9uIjoiMjA1MC0wMS0wMVQxMjowMDowMC4wMDBaIiwiY29uZGl0aW9ucyI6W1siY29udGVudC1sZW5ndGgtcmFuZ2UiLDAsMTA0ODU3NjBdXX0=',
+  imgSignature: '0tvxS7W21oA1GWXs5De6IoeuLVc=',
   getImg: 'http://resource.xzysoft.net',
 
   // default (文件大小最大上限/M,默认10M)
   max: 10,
-  fileLib: 'front/img/', // oss 对应文件目录
+  fileLib: 'front/test/', // oss 对应文件目录
   // lrz config 
 
   quality: 1, // 图片质量 0-1 从低到高, 默认0.8 具体参数参考lrz
@@ -56,6 +56,7 @@ export default {
   data() {
     return {
       pic: [],
+      picUrl: [],
     };
   },
   methods: {
@@ -65,11 +66,26 @@ export default {
       //   console.log(url)
       //   this.pic.push(url);
       // })
+      oss.lrzImage(file.file,(picObj)=>{
+        // console.log(url)
+        this.pic.push(picObj);
+      })
     },
     delPhoto(i) {
       console.log(i);
       this.pic.splice(i, 1);
     },
+    submit(){
+      this.pic.map(item=>{
+        if(item.file){
+          oss.upload(item.file,(url)=>{
+            console.log(url)
+            this.picUrl.push(url);
+          })
+        }  
+      })
+      console.log(this.picUrl)
+    }
   },
 };
 </script>
