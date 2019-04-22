@@ -31,20 +31,20 @@ import { Uploader, Toast } from "vant";
 import lrz from 'lrz'  
 
 Vue.use(Uploader).use(Toast);
-import ossImg from 'testnpm_zyc'
+import ossImg from 'aliyun-oss-web'
 
 const oss = new ossImg({
   // aliyun oss config
-  uploadImageUrl: 'http://xzygo.oss-cn-shenzhen.aliyuncs.com', //默认存在根目录，可根据需求改
-  AccessKeySecret: 'SLCjMuerijhi4A66gbr5LGjqqhYmMni',
-  OSSAccessKeyId: 'LTAIPWNRp7uMlW1li',
-  imgPolicy: 'eyJleHBpcmF0aW9uIjoiMjA1MC0wMS0wMVQxMjowMDowMC4wMDBaIiwiY29uZGl0aW9ucyI6W1siY29udGVudC1sZW5ndGgtcmFuZ2UiLDAsMTA0ODU3NjBdXX0=',
-  imgSignature: '0tvxS7W21oA1GWXs5De6IoeuLVc=',
-  getImg: 'http://resource.xzysoft.net',
+  uploadImageUrl: 'Bucket 域名', //默认存在根目录，可根据需求改
+  AccessKeySecret: 'Access Key Secret',
+  OSSAccessKeyId: 'AccessKey ID',
+  imgPolicy: '',
+  imgSignature: '',
+  getImg: '图片访问的域名',
 
   // default (文件大小最大上限/M,默认10M)
   max: 10,
-  fileLib: 'front/test/', // oss 对应文件目录
+  fileLib: 'oss 对应文件目录', // oss 对应文件目录
   // lrz config 
 
   quality: 1, // 图片质量 0-1 从低到高, 默认0.8 具体参数参考lrz

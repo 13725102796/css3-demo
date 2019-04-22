@@ -10,6 +10,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "aliyun-oss-web": "^1.0.4",
     "bankcardinfo": "^2.0.5",
     "plate-number-input": "^1.0.7",
     "testnpm_zyc": "^1.0.3",
